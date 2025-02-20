@@ -6,6 +6,8 @@ plugins {
 }
 
 android {
+    compileSdkVersion 35
+    compileSdk = 35
     namespace = "com.example.dicee_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
