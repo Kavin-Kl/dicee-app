@@ -1,2 +1,3 @@
 # dicee-app
-Roll the dicee
+Roll the dicee...
+A basic Dice app using flutter
