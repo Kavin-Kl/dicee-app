@@ -49,7 +49,7 @@ class _DiceScreenState extends State<DiceScreen> {
                     onTap: rollDice,
                     child: Image.asset(
                       'images/dice$ld.png',
-                      width: 150,
+                      width: 200,
                       height: 200,
                     ),
                   ),
