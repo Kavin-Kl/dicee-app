@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -10,6 +9,7 @@ class DiceScreen extends StatefulWidget {
 }
 
 class _DiceScreenState extends State<DiceScreen> {
+  @override
   @override
   int ld = 1;
   int rd = 1;
@@ -37,25 +37,58 @@ class _DiceScreenState extends State<DiceScreen> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 100.0),
-        child: Row(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
-              onTap: rollDice,
-              child: Image.asset(
-                'images/dice$ld.png',
-                width: 200,
-                height: 200,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: GestureDetector(
+                    onTap: rollDice,
+                    child: Image.asset(
+                      'images/dice$ld.png',
+                      width: 200,
+                      height: 200,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                Flexible(
+                  child: GestureDetector(
+                    onTap: rollDice,
+                    child: Image.asset(
+                      'images/dice$rd.png',
+                      width: 200,
+                      height: 200,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(width: 20),
-            GestureDetector(
-              onTap: rollDice,
-              child: Image.asset(
-                'images/dice$rd.png',
-                width: 200,
-                height: 200,
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: rollDice,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurple,
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+                minimumSize: const Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              child: const Text(
+                'Roll',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],
